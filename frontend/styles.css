@@ -1,0 +1,398 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header, footer {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 1em 0;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+
+}
+.top{
+    color: black;
+
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.search-box {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    max-width: 300px;
+    border: 2px solid gray;
+    border-radius:30px;
+    overflow: hidden;
+}
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+.search-button {
+    background-color: gray;
+    border: none;
+    padding: 25px 23px;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 25px 25px 0;
+}
+.search-button:hover {
+    background-color: black;
+}
+nav a {
+    margin: 0 15px;
+    color:black;
+    text-decoration: none;
+}
+#welcome{
+    height: 200px;
+    width: 700px;
+}
+.pics{
+    width: 300px;
+    height: 100px;
+}
+.hero {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 45px;
+    padding: 100px 0;
+    width:100%;
+    height: 500px;
+    text-shadow: 3px 3px black;
+}
+.container {
+    padding: 20px;
+}
+.facility {
+    margin-bottom: 15px;
+}
+.feed{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.feedback-form input, .feedback-form textarea, .feedback-form select {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.feedback-form button {
+    padding: 10px;
+    background-color: #888f96;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.feedback-form button:hover {
+    background-color: #2f3235;
+}
+
+
+
+.freq {
+    margin: 50px 300px;
+    text-align: center;
+}
+
+.freqhead {
+    margin-bottom: 70px;
+}
+
+.freqhead_h1 {
+    font-size: 50px;
+}
+
+.freqhead_p {
+    opacity: 0.6;
+}
+
+.freqbody {
+    border-style: ridge;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.freqbody1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    cursor: pointer;
+    border-radius: 5px;
+    align-items: center;
+    background-color: #f8f8f8;
+    transition: background-color 0.3s ease;
+}
+
+.freqbody1:hover {
+    background-color: #e6e6e6;
+}
+
+.freq_hide {
+    display: none;
+    padding: 0px 25px 0px 40px;
+    text-align: left;
+}
+
+.freqimg {
+    height: 20px;
+    width: 20px;
+    opacity: 0.6;
+}
+
+input[type="checkbox"]:checked + label + .freq_hide {
+    display: block;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.parallax-heading {
+    animation: parallax-heading 10s infinite;
+    position: relative;
+}
+
+.card_heading {
+    text-align: center;
+    font-size: 60px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 1px;
+    margin-bottom: 60px;
+}
+
+.body2, .body1 {
+    padding: 20px;
+}
+
+.body1 {
+    margin-left: 110px;
+}
+
+.body2 {
+    margin-left: 450px;
+}
+
+.card {
+    display: flex;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 800px;
+    height: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 40%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+    width: 60%;
+}
+
+.card-content h2 {
+    margin-top: 0;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    margin: 0;
+    color: #555;
+    line-height: 1.5;
+}
+
+.parallax-card {
+    position: relative;
+    animation: parallax-card 10s infinite;
+}
+
+@keyframes parallax-card {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes parallax-heading {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.cards {
+    background-image: url('image/pexels-pixabay-159632.jpg'); /* Replace with your background image */
+    height: 355vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.custom-btn {
+    background-color: #657782; /* Button background color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 15px 30px; /* Button padding */
+    font-size: 16px; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Button shadow */
+}
+
+
+
+.custom-btn:hover {
+    background-color: #273138; /* Button color on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+.custom-btn:active {
+    background-color: #5e6971; /* Button color on click */
+    transform: translateY(0); /* Remove lift on click */
+}
+
+.custom-btn:focus {
+    outline: none; /* Remove focus outline */
+}
+
+.know_more{
+    display: flex;
+    justify-content: center;
+}
+.anc{
+    text-decoration: none;
+    color: white;
+}
+
+.contact1{
+    display: flex;
+    justify-content: space-around;
+}
+
+.bgimg{
+    width: 200px;
+    height: 200px;
+}
+
+.contact1{
+    margin-top: 20px;
+    background-color: #7d7777;
+}
+
+
+
+
+.query-form {
+    width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.query-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.query-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.query-form input[type="text"],
+.query-form input[type="email"],
+.query-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.query-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(115, 112, 112);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.query-form button:hover {
+    background-color: #3a403a;
+}
+
+
