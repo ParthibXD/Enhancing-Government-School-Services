@@ -107,15 +107,11 @@ const LoginForm = () => {
       const response = await axios.post('http://localhost:8000/api/v1/signup/signin', {
         email,
         password,
-      });
-
-
-
-
-
-      console.log(response);
-      
-
+      },
+      {
+        withCredentials:true,
+      }
+    );
       if (response.status === 200) {
 
 
@@ -124,8 +120,12 @@ const LoginForm = () => {
         setMessage('Login Successful! Redirecting...');
         
 
-        console.log(response.data);
-
+        console.log(response.data.data);
+        const {accessToken,refreshToken}= response.data.data;
+        
+        sessionStorage.setItem('accessToken', accessToken);
+        sessionStorage.setItem('refreshToken', refreshToken);
+        
         // Pass login data to the next component (e.g., Home component)
         setTimeout(() => {
           navigate('/home', { state: { loginData: response.data } });

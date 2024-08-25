@@ -24,6 +24,9 @@ const signupSchema =new Schema(
             type:String,
             required:[true,"Password id required"]
         },
+    },
+    {
+        timestamps:true
     }
 );
 //before saving in user profile

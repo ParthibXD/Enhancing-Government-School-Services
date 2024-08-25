@@ -7,13 +7,11 @@ import QueryForm from './components/QueryForm';
 import FeedbackForm from './components/FeedbackForm';
 import Footer from './components/Footer';
 import { CrossCheck } from './components/CrossCheck';
-import Logout from './components/Logout'
 
 const App = () => {
   return (
     <div>
       <Header />
-      {/* <Logout /> */}
       <Hero />
       <Schemes />
       <FAQ />
