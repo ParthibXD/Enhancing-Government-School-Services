@@ -86,7 +86,7 @@ const userSignin=asyncHandler(async(req,res)=>{
         throw new ApiError(404, "User not found")
     }
 
-    const isPasswordValid=user.isPasswordCorrect(password)
+    const isPasswordValid=await user.isPasswordCorrect(password)
 
     if(!isPasswordValid){
         throw new ApiError(401, "Invalid User credential")
@@ -119,6 +119,33 @@ const userSignin=asyncHandler(async(req,res)=>{
 
 })
 
+
+const userLogout= asyncHandler(async (req,res)=>{
+    await Signup.findByIdAndUpdate(
+        req.user_id,
+        {
+            $unset:{
+                refreshToken:1,
+            }
+        },
+        {
+            new:true
+        }
+    )
+
+
+    const options={
+        httpOnly: true,
+        secure: true
+    }
+
+
+    return res.status(200)
+    .clearCookie("accessToken", options)
+    .clearCookie("refreshToken",options)
+    .json(new ApiResponse(200, {}, "User logged Out"))
+})
+
 export {
-    userSignup, userSignin,generateAccessAndRefreshTokens
+    userSignup, userSignin,generateAccessAndRefreshTokens, userLogout
 }

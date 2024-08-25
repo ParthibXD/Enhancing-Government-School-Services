@@ -90,7 +90,7 @@
 // export default LoginForm;
 
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -100,6 +100,7 @@ const LoginForm = () => {
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
+
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -108,12 +109,21 @@ const LoginForm = () => {
         password,
       });
 
+
+
+
+
       console.log(response);
       
 
       if (response.status === 200) {
+
+
+       
         // Assuming the login was successful, navigate to the "home" page
         setMessage('Login Successful! Redirecting...');
+        
+
         console.log(response.data);
 
         // Pass login data to the next component (e.g., Home component)

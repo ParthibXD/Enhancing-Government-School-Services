@@ -308,7 +308,7 @@ const RegisterForm = () => {
 
         // Redirect to another page (e.g., the login page) after 2 seconds
         setTimeout(() => {
-          navigate('/home');  // Change the route to the desired page
+          navigate('/login');  // Change the route to the desired page
         }, 2000);
       } else {
         const errorData = await response.json();
