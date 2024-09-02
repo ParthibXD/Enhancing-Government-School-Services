@@ -159,6 +159,97 @@ const userInfo = asyncHandler ( async (req  , res) => {
     ))
 })
 
+const userProfile = asyncHandler (async (req,res) =>{
+    const {username}= req.params
+
+    if(!username?.trim()){
+        throw new ApiError(400, "Username is Missing")
+    }
+
+    const user= await Signup.aggregate([
+        {
+            $match:{
+                username:username?.toLowerCase()
+            }
+        }
+        ,{
+            $project:{
+                username:1,
+                email:1,
+            }
+        }
+    ])
+
+    if(!user.length){
+        throw new ApiError(404, "User not found")
+    }
+
+
+    return res.status(200)
+    .json(
+        new ApiResponse(
+            200, 
+            user[0],
+            "User Profile fetched"
+        )
+    )
+
+
+})
+
+const changeUserDetails = asyncHandler(async(req,res) =>{
+    const {email} = req.body
+
+    if( !email){
+        throw new ApiError(400, "Invalid Input")
+    }
+
+    const user=await Signup.findByIdAndUpdate(
+        req.user?._id,
+        {
+            $set:{
+                email:email
+            }
+        },
+        {
+            new:true,
+        }
+    ).select("-password")
+
+    return res
+    .status(200)
+    .json(
+        new ApiResponse(
+            200,
+            user,
+            "Accounts details updated"
+        )
+    )
+})
+
+const changePassword = asyncHandler(async(req,res)=>{
+    const {oldpassword,newpassword}=req.body
+
+    const user=await Signup.findById(req.user?._id)
+
+    const isPasswordCorrect=await user.
+    isPasswordCorrect(oldpassword)
+
+    if(!isPasswordCorrect){
+        throw new ApiError(400,"Invalid Password")
+    }
+
+    user.password=newpassword
+    await user.save({validateBeforeSave:false})
+
+    return res.status(200)
+    .json(new ApiResponse(
+        200, 
+        {},
+        "Password Changed"
+    ))
+})
+
 export {
-    userSignup, userSignin,generateAccessAndRefreshTokens, userLogout,userInfo
+    userSignup, changeUserDetails,userSignin,generateAccessAndRefreshTokens,changePassword, userLogout,userInfo,userProfile
 }
