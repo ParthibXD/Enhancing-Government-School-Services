@@ -18,4 +18,12 @@ import signupRouter from "./routes/signup.routes.js"
 
 app.use("/api/v1/signup",signupRouter)
 
+import queryRouter from "./routes/query.routes.js"
+
+app.use("/api/v1/query",queryRouter)
+
+import reportRouter from "./routes/report.routes.js"
+
+app.use("/api/v1/report", reportRouter)
+
 export { app }
