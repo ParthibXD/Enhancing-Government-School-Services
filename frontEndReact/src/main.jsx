@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
       <Routes>
-      <Route path="/" element={<App />} />
+      <Route path="/" element={<RegisterForm />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/home" element={<App />} />
         <Route path="/profile/:username" element={<Profile />} />
