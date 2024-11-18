@@ -10,6 +10,24 @@ import mongoose, { isValidObjectId } from "mongoose";
 import { Query } from "../models/query.models.js";
 import { Report } from "../models/report.models.js";
 
+const getUserQueries = asyncHandler(async (req, res) => {
+    const queries = await Query.find({ owner: req.user._id });
+  
+    if (!queries || queries.length === 0) {
+      throw new ApiError(404, "No queries found for the user");
+    }
+    console.log(queries)
+  
+    return res.status(200).json(
+      new ApiResponse(
+        200,
+        queries,
+        "Queries fetched successfully"
+      )
+    );
+  });
+
+
 const addReport=asyncHandler(async(req,res)=>{
     const {queryId} =req.params;
     const {title,content}= req.body;
@@ -64,5 +82,5 @@ const addReport=asyncHandler(async(req,res)=>{
 })
 
 export{
-    addReport
+    addReport,getUserQueries
 }

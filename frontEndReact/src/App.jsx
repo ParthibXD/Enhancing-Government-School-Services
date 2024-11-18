@@ -6,7 +6,7 @@ import FAQ from './components/FAQ';
 import QueryForm from './components/QueryForm';
 import FeedbackForm from './components/FeedbackForm';
 import Footer from './components/Footer';
-import { CrossCheck } from './components/CrossCheck';
+import ReportForm from './components/ReportForm';
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
       <FAQ />
       
       <QueryForm />
-      <CrossCheck />
+      <ReportForm />
       <FeedbackForm />
       <Footer />
     </div>

@@ -37,11 +37,12 @@ const Header = () => {
       <div className="text-center">
         <h1 className="text-2xl font-bold">Enhancing Government School Services</h1>
         <nav className="mt-2">
-          <a href="#home" className="mx-2 text-black">Home</a>
-          <a href="#facilities" className="mx-2 text-black">Facilities</a>
-          <a href="#FAQ" className="mx-2 text-black">FAQ</a>
-          <a href="#query" className="mx-2 text-black">Query</a>
-          <a href="#feedback" className="mx-2 text-black">Feedback</a>
+          <a href="/Home" className="mx-2 text-black">Home</a>
+          <a href="/schemes" className="mx-2 text-black">Facilities</a>
+          <a href="/faq" className="mx-2 text-black">FAQ</a>
+          <a href="/query" className="mx-2 text-black">Query</a>
+          <a href="/report" className="mx-2 text-black">Report</a>
+          <a href="/feedback" className="mx-2 text-black">Feedback</a>
 
           {
             error?(

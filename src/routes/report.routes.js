@@ -1,5 +1,5 @@
 import { Router } from "express";
-import {addReport} from "../controllers/report.controllers.js"
+import {addReport,getUserQueries} from "../controllers/report.controllers.js"
 import {upload} from "../middleware/multer.middleware.js"
 import {verifyJWT} from "../middleware/auth.middleware.js"
 
@@ -15,5 +15,7 @@ router.use(verifyJWT,upload.fields([
 )
 
 router.route("/:queryId").post(addReport)
+
+router.route("/userqueries").get(verifyJWT, getUserQueries);
 
 export default router
